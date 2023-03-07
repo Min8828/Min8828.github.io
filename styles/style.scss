@@ -20,7 +20,7 @@ body {
   color: white;
 
   div.brand-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 0.5rem 2rem;
     background-color: inherit;
   }
@@ -28,10 +28,11 @@ body {
   div.navbar-links {
     ul {
       display: flex;
+      flex-wrap: wrap;
       list-style-type: none;
       li[data-tab-target] {
         cursor: pointer;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         background-color: #333;
         padding: 0.5rem 1rem;
 
@@ -66,14 +67,11 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .navbar {
     flex-direction: column;
     box-shadow: 0 0 10px black;
 
-    div.brand-title {
-      font-size: 2rem;
-    }
     .toggle-button {
       display: flex;
     }
@@ -91,7 +89,6 @@ body {
         flex-direction: column;
 
         li[data-tab-target] {
-          font-size: 1.3rem;
           padding: 0.2rem;
           border-top: 1px solid white;
         }
