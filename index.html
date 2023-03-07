@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/writing.svg" />
+    <link rel="bookmark" href="./images/writing.svg " />
+    <!-- if use, font-awesome icon -->
+    <script
+      src="https://kit.fontawesome.com/dc40eaf398.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Mavis Lin | 林旻柔</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title">Mavis Lin</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="navbar-links">
+        <ul>
+          <li data-tab-target="#home" class="active tab">
+            <i class="fa-solid fa-house"></i>Home
+          </li>
+          <li data-tab-target="#pricing" class="tab">
+            <i class="fa-solid fa-folder-open"></i>Portfolio
+          </li>
+          <li data-tab-target="#about" class="tab">
+            <i class="fa-solid fa-address-card"></i>About
+          </li>
+          <li data-tab-target="#resume" class="tab">
+            <i class="fa-solid fa-scroll"></i>Resume
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="tab-content">
+      <div id="home" data-tab-content class="active">
+        <h1>Home</h1>
+        <p>This is the home</p>
+      </div>
+      <div id="pricing" data-tab-content>
+        <h1>Portfolio</h1>
+        <p>Some information on pricing</p>
+      </div>
+      <div id="about" data-tab-content>
+        <h1>About</h1>
+        <p>Let me tell you about me</p>
+      </div>
+      <div id="resume" data-tab-content>
+        <h1>Resume</h1>
+        <p>this is resume</p>
+      </div>
+    </main>
+
+    <script>
+      const tabs = document.querySelectorAll("[data-tab-target]");
+      const tabContents = document.querySelectorAll("[data-tab-content]");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = document.querySelector(tab.dataset.tabTarget);
+          console.log(target);
+          tabContents.forEach((tabContent) => {
+            tabContent.classList.remove("active");
+          });
+          tabs.forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          tab.classList.add("active");
+          target.classList.add("active");
+        });
+      });
+
+      // responsive navbar
+      const toggleButton = document.getElementsByClassName("toggle-button")[0];
+      const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+      toggleButton.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
