@@ -8,17 +8,19 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="./images/writing.svg" />
     <link rel="bookmark" href="./images/writing.svg " />
-    <!-- if use, font-awesome icon -->
+    <!-- font-awesome icon -->
     <script
       src="https://kit.fontawesome.com/dc40eaf398.js"
       crossorigin="anonymous"
     ></script>
-
+    <!-- JS -->
+    <script src="./app.js" defer></script>
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Mavis Lin | 林旻柔</title>
   </head>
   <body>
+    <!-- navbar -->
     <nav class="navbar">
       <div class="brand-title">Mavis Lin</div>
       <a href="#" class="toggle-button">
@@ -31,7 +33,7 @@
           <li data-tab-target="#home" class="active tab">
             <i class="fa-solid fa-house"></i>Home
           </li>
-          <li data-tab-target="#pricing" class="tab">
+          <li data-tab-target="#portfolio" class="tab">
             <i class="fa-solid fa-folder-open"></i>Portfolio
           </li>
           <li data-tab-target="#about" class="tab">
@@ -44,51 +46,84 @@
       </div>
     </nav>
 
+    <!-- content -->
     <main class="tab-content">
+      <!-- Home -->
       <div id="home" data-tab-content class="active">
         <h1>Home</h1>
         <p>This is the home</p>
       </div>
-      <div id="pricing" data-tab-content>
+      <!-- Portfolio -->
+      <div id="portfolio" data-tab-content class="">
         <h1>Portfolio</h1>
-        <p>Some information on pricing</p>
+        <article>
+          <div class="left-section">
+            <h2 class="project-name">Project Name</h2>
+            <a href="https://Min8828.github.io"
+              ><img
+                src="https://unsplash.it/240/150?gravity=center"
+                alt="thumbnail"
+            /></a>
+            <div class="links-to-show">
+              <a href="#"><i class="fa-solid fa-eye"></i>Live Preview</a>
+              <a href="#"><i class="fa-brands fa-github"></i>github</a>
+            </div>
+            <h3>Technologies Uesd</h3>
+            <ul>
+              <li>React.js</li>
+              <li>Express.js</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+          <div class="right-section">
+            <h3>Outline</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              perspiciatis nihil incidunt. Atque, omnis labore? Voluptates odit
+              distinctio necessitatibus assumenda, obcaecati explicabo commodi
+              repellat ab, est at minus ad dolores!
+            </p>
+
+            <h3>Project Difficulties</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat
+              maiores blanditiis aspernatur labore ratione, maxime laborum hic
+              quibusdam? Rem quia assumenda praesentium? Dolorum consequatur ad
+              libero quas optio, quasi aut saepe labore! Repudiandae ducimus,
+              nulla exercitationem aperiam reprehenderit facilis assumenda!
+            </p>
+            <h3>My Solution</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Exercitationem blanditiis neque in. Eum tenetur, alias vel eos
+              assumenda similique laboriosam impedit iure accusamus explicabo
+              exercitationem qui laborum a omnis dolor autem ipsum consequuntur?
+              Illo, saepe porro! Commodi, beatae exercitationem est earum quo
+              facere, eos, maxime optio veritatis necessitatibus adipisci
+              quisquam!
+            </p>
+            <h3>Notable Features</h3>
+            <ul>
+              <li>Registration</li>
+              <li>Login</li>
+              <li>Account Confirmation</li>
+              <li>Token Authentication with JSON Web Tokens</li>
+            </ul>
+          </div>
+        </article>
       </div>
-      <div id="about" data-tab-content>
-        <h1>About</h1>
-        <p>Let me tell you about me</p>
-      </div>
+
+      <!-- resume -->
       <div id="resume" data-tab-content>
         <h1>Resume</h1>
         <p>this is resume</p>
       </div>
+
+      <!-- Contact -->
+      <div id="about" data-tab-content>
+        <h1>About</h1>
+        <p>Let me tell you about me</p>
+      </div>
     </main>
-
-    <script>
-      const tabs = document.querySelectorAll("[data-tab-target]");
-      const tabContents = document.querySelectorAll("[data-tab-content]");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = document.querySelector(tab.dataset.tabTarget);
-          console.log(target);
-          tabContents.forEach((tabContent) => {
-            tabContent.classList.remove("active");
-          });
-          tabs.forEach((tab) => {
-            tab.classList.remove("active");
-          });
-          tab.classList.add("active");
-          target.classList.add("active");
-        });
-      });
-
-      // responsive navbar
-      const toggleButton = document.getElementsByClassName("toggle-button")[0];
-      const navbarLinks = document.getElementsByClassName("navbar-links")[0];
-
-      toggleButton.addEventListener("click", () => {
-        navbarLinks.classList.toggle("active");
-      });
-    </script>
   </body>
 </html>
