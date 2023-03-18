@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   background-color: #caf0f8;
 }
@@ -94,7 +94,7 @@ body {
   }
 }
 main {
-  width: 100vw;
+  max-width: 100vw;
 }
 main div[data-tab-content] {
   padding: 2rem;
@@ -117,28 +117,28 @@ main #portfolio.active article {
   display: flex;
   justify-content: center;
 }
-main #portfolio.active article .project-name {
-  width: -moz-max-content;
-  width: max-content;
-  background-color: #007ea7;
-  color: white;
-  padding: 0.25rem 0.5rem;
-  border: 2px inset #555;
-  border-radius: 0.5rem;
-}
 main #portfolio.active article .left-section {
   width: 30%;
   padding: 0rem 1rem;
+  margin-right: 1rem;
 }
-main #portfolio.active article .left-section h2 {
+main #portfolio.active article .left-section .project-name {
+  width: 100%;
+  text-align: center;
+  background-color: #007ea7;
+  color: white;
+  padding: 0.25rem 0.5rem;
   margin-bottom: 1rem;
+  border: 2px inset #555;
+  border-radius: 0.5rem;
 }
 main #portfolio.active article .left-section a img {
+  width: 100%;
   border-radius: 0.5rem;
 }
 main #portfolio.active article .left-section .links-to-show {
   width: 15rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 main #portfolio.active article .left-section .links-to-show a {
   color: #007ea7;
@@ -158,6 +158,7 @@ main #portfolio.active article .right-section {
 main #portfolio.active article .right-section p {
   padding: 0 0.5rem;
   line-height: 1.5;
+  font-size: 1.2rem;
 }
 main #portfolio.active article .right-section p:hover {
   background-color: #ccc;
@@ -165,10 +166,244 @@ main #portfolio.active article .right-section p:hover {
 main #portfolio.active article .left-section h3,
 main #portfolio.active article .right-section h3 {
   color: #333;
+  font-size: 1.5rem;
   margin: 0.5rem 0;
   border-bottom: 2px solid #333;
 }
 main #portfolio.active article .left-section ul li,
 main #portfolio.active article .right-section ul li {
   margin-left: 2rem;
+  font-size: 1.2rem;
+}
+main #home.active {
+  width: 70vw;
+  margin: 0 auto;
+}
+main #home.active .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+main #home.active .head .intro h1 {
+  font-size: 2rem;
+}
+main #home.active .head .intro p {
+  font-size: 1.2rem;
+}
+main #home.active .head .intro .work {
+  border: 2px solid #333;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+main #home.active .head .intro .work a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  position: relative;
+}
+main #home.active .head .intro .work a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #007ea7;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+main #home.active .head .intro .work a:hover::before {
+  transform: scaleX(1);
+}
+main #home.active .head .me {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  background-image: url(../images/me.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+main #home.active .head .me::before, main #home.active .head .me::after {
+  --scale: 0;
+  --tooltip-color: #333;
+  --arrow-size: 0.75rem;
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transition: 150ms transform;
+}
+main #home.active .head .me::before {
+  --translate-y: -100%;
+  content: attr(data-info);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 1.25rem;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  background-color: var(--tooltip-color);
+  transform-origin: bottom center;
+}
+main #home.active .head .me:hover::before, main #home.active .head .me:hover::after {
+  --scale: 1;
+}
+main #home.active .head .me::after {
+  content: "";
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+main #home.active div {
+  margin: 1rem 0;
+}
+main #home.active div h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+main #home.active div p {
+  padding: 0.5rem 2rem;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+main #home.active table,
+main #home.active th,
+main #home.active td {
+  border-collapse: collapse;
+  border-top: 2px solid #555;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+main #home.active table:last-child,
+main #home.active th:last-child,
+main #home.active td:last-child {
+  border-bottom: 2px solid #555;
+}
+main #home.active table {
+  margin-left: 2rem;
+}
+main #home.active tr:hover {
+  background-color: #88b2cc;
+  color: white;
+}
+main #home.active th {
+  text-align: left;
+  padding: 0.5rem 2rem;
+}
+
+@media (max-width: 1000px) {
+  main #home.active {
+    width: 85vw;
+  }
+  main #portfolio.active article {
+    width: 90vw;
+  }
+  main #portfolio.active article .left-section {
+    width: 40%;
+  }
+  main #portfolio.active article .left-section a img {
+    width: 100%;
+  }
+  main #portfolio.active article .right-section {
+    width: 60%;
+  }
+  main #portfolio.active article .left-section h3,
+  main #portfolio.active article .right-section h3 {
+    font-size: 1.5em;
+  }
+  main #portfolio.active article .left-section ul li,
+  main #portfolio.active article .right-section ul li {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 850px) {
+  main #home.active {
+    padding: 0;
+  }
+  main #home.active .head .me {
+    width: 11rem;
+    height: 11rem;
+  }
+}
+@media (max-width: 750px) {
+  main #home.active {
+    width: 90vw;
+  }
+  main #home.active .head .me {
+    width: 10rem;
+    height: 10rem;
+  }
+  main #home.active .head .intro .work {
+    padding: 0.75rem;
+  }
+  main #home.active .head .intro .work a {
+    font-size: 1.1rem;
+  }
+  main #portfolio.active h1 {
+    display: none;
+  }
+  main #portfolio.active article {
+    width: 90vw;
+    flex-direction: column;
+    align-items: center;
+  }
+  main #portfolio.active article .left-section {
+    width: 90%;
+    margin: 0;
+  }
+  main #portfolio.active article .left-section a {
+    width: 90%;
+  }
+  main #portfolio.active article .left-section h3,
+  main #portfolio.active article .left-section ul {
+    display: none;
+  }
+  main #portfolio.active article .right-section {
+    display: none;
+    width: 90%;
+  }
+  main #portfolio.active article .left-section h3,
+  main #portfolio.active article .right-section h3 {
+    font-size: 1.5em;
+  }
+  main #portfolio.active article .left-section ul li,
+  main #portfolio.active article .right-section ul li {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 600px) {
+  main #home.active {
+    width: 95vw;
+  }
+  main #home.active .head {
+    flex-direction: column;
+  }
+  main #home.active .head .intro {
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  main #home.active {
+    padding: 0;
+  }
+  main #portfolio.active article {
+    width: 100vw;
+  }
+  main #portfolio.active article .left-section {
+    width: 95%;
+  }
+  main #portfolio.active article .left-section .links-to-show {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  main #portfolio.active article .left-section .links-to-show a {
+    font-size: 1.5em;
+  }
+  main #portfolio.active article .left-section .links-to-show a:first-child {
+    padding-right: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
