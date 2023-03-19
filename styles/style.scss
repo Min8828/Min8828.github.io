@@ -125,88 +125,6 @@ main {
       margin-bottom: 0.5rem;
     }
   }
-
-  // porfolio page
-  #portfolio.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    article {
-      width: 80vw;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-
-      .left-section {
-        width: 30%;
-        padding: 0rem 1rem;
-        margin-right: 1rem;
-
-        .project-name {
-          width: 100%;
-          text-align: center;
-          background-color: #007ea7;
-          color: white;
-          padding: 0.25rem 0.5rem;
-          margin-bottom: 1rem;
-          border: 2px inset #555;
-          border-radius: 0.5rem;
-        }
-
-        a img {
-          width: 100%;
-          border-radius: 0.5rem;
-        }
-
-        .links-to-show {
-          width: 15rem;
-          margin: 1rem 0;
-
-          a {
-            color: #007ea7;
-            text-decoration: none;
-            font-size: 1.2rem;
-            i {
-              padding-right: 0.5rem;
-            }
-            &:first-child {
-              padding-right: 1rem;
-            }
-          }
-        }
-      }
-
-      .right-section {
-        width: 70%;
-        padding: 0.5rem 1rem;
-
-        p {
-          padding: 0 0.5rem;
-          line-height: 1.5;
-          font-size: 1.2rem;
-          &:hover {
-            background-color: #ccc;
-          }
-        }
-      }
-
-      .left-section,
-      .right-section {
-        h3 {
-          color: #333;
-          font-size: 1.5rem;
-          margin: 0.5rem 0;
-          border-bottom: 2px solid #333;
-        }
-        ul li {
-          margin-left: 2rem;
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-
   // home
   #home.active {
     width: 70vw;
@@ -336,6 +254,51 @@ main {
     th {
       text-align: left;
       padding: 0.5rem 2rem;
+    }
+  }
+
+  // porfolio page
+  #portfolio.active {
+    section {
+      width: 90vw;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .project {
+        margin: 1rem;
+        .project-name {
+          background-color: #007ea7;
+          border-radius: 0.5rem;
+          border: 2px solid black;
+          color: white;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+        a img {
+          width: 300px;
+          height: 300px;
+          border-radius: 1rem;
+        }
+
+        .links-to-show {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 0.5rem;
+          a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: black;
+            &:first-child {
+              margin-right: 1.5rem;
+            }
+            &:hover {
+              color: #007ea7;
+            }
+          }
+        }
+      }
     }
   }
 }
